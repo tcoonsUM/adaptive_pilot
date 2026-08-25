@@ -1,0 +1,27 @@
+random_seed: 7
+
+assets:
+  root: assets/oed
+  device: cpu
+
+utility:
+  measurement_time: 0.325
+  inner_sample_sizes: [2, 2, 2]
+  inner_seed: 41
+  noise_standard_deviation: 0.1
+  fno_batch_size: 8
+  outer_chunk_size: 16
+
+pilot:
+  n_outer_samples: 4
+  seed: 43
+
+estimation:
+  n_trials: 1
+  nmc_outer_samples: 2
+  estimator_budget: 72.0
+  minimum_base: 2
+  minimum_extra: 1
+
+oracle:
+  path: paper_results/oed_case1/case1_precomputed.npz

@@ -1,0 +1,4 @@
+estimator,average_regret,average_estimator_variance,estimator_variance_at_true_optimum
+NMC-SF,0.0751,0.0473,0.0469
+MFEIG-ADAPT,0.0455,0.0227,0.024
+MFEIG-FLAT,0.0535,0.0237,0.0244

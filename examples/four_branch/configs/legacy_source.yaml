@@ -1,0 +1,35 @@
+random_seed: 42
+
+pilot:
+  # This reproduces the main legacy function rather than the manuscript text.
+  initial_designs: [-3.0, -1.0, 1.0, 3.0]
+  candidate_count: 1201
+  n_active_designs: 12
+  n_samples_per_design: 32
+  n_initial_samples: 20
+  acquisition_switch_fraction: 0.5
+  wishart_draws: 1000
+  objective_weight_mode: auto
+  common_random_numbers_across_initial_designs: true
+  gp_settings:
+    normalize_designs: true
+    normalize_outputs: true
+    initial_length_scale: 0.25
+    n_restarts_optimizer: 0
+    optimize_hyperparameters: false
+    random_seed: 42
+
+optimization:
+  candidate_count: 2401
+  n_iterations: 40
+  # Total = initialization + offline pilot + 40 x 64 ACV budget.
+  total_budget: 2988.2824
+  variance_inflation_standard_deviations: 2.0
+  local_pilot_samples: 16
+  estimator:
+    backend: mxmcpy
+    minimum_base: 2
+    minimum_extra: 2
+  objective_gp:
+    n_restarts_optimizer: 1
+    allow_repeated_candidates: true

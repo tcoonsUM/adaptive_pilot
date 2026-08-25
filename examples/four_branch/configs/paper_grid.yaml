@@ -1,0 +1,7 @@
+base_config: illustrative.yaml
+n_trials: 30
+per_iteration_budgets: [32.0, 64.0, 128.0]
+pilot_design_counts: [6, 12]
+pilot_samples_per_design: [16, 32]
+methods: [mc-sf, acv-emulator, acv-flat, acv-independent]
+seed_start: 0

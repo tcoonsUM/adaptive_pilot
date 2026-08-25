@@ -1,0 +1,3 @@
+[console_scripts]
+adaptive-cov-four-branch = adaptive_covariance.cli:four_branch_main
+adaptive-cov-paper-plots = adaptive_covariance.cli:paper_plots_main

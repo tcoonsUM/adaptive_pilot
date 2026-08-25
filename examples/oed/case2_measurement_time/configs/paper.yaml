@@ -1,0 +1,49 @@
+# Manuscript Case 2 settings. Full execution is computationally expensive.
+random_seed: 43
+
+assets:
+  root: assets/oed
+  device: cpu
+
+utility:
+  sensor_location: [-0.8, -0.2]
+  inner_sample_sizes: [1000, 500, 100]
+  inner_seed: 41
+  noise_standard_deviation: 0.1
+  cost_offset: 0.1
+  fno_batch_size: 32
+  outer_chunk_size: 256
+  cost_scaling: source_normalized
+
+pilot:
+  initial_designs: [0.1, 0.6]
+  candidate_count: 101
+  n_active_designs: 10
+  n_samples_per_design: 128
+  n_initial_samples: 200
+  acquisition_switch_fraction: 0.5
+  wishart_draws: 1000
+  objective_weight_mode: auto
+  common_random_numbers_across_initial_designs: false
+  gp_settings:
+    normalize_designs: true
+    normalize_outputs: true
+    initial_length_scale: 0.25
+    n_restarts_optimizer: 2
+    optimize_hyperparameters: true
+    random_seed: 43
+
+optimization:
+  candidate_count: 101
+  n_iterations: 20
+  total_budget_hours: 37.1
+  variance_inflation_standard_deviations: 2.0
+  estimator:
+    minimum_base: 2
+    minimum_extra: 2
+  objective_gp:
+    n_restarts_optimizer: 1
+    allow_repeated_candidates: true
+
+reference:
+  path: paper_results/oed_case2/reference_quantities.npz

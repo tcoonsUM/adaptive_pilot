@@ -1,0 +1,12 @@
+{
+  "high_checkpoint": "checkpoints/conv_diff_mlp_mf_oed_multiple_source_0pt05_GSuvxy_scale_power_100pt_grid_GELU_ALL_DATA_HF.pt",
+  "medium_checkpoint": "checkpoints/conv_diff_fno_mf_oed_multiple_source_multi_step_without_tf_0pt05_GSuvxy_scale_identity_ALL_DATA.pt",
+  "low_checkpoint": "checkpoints/conv_diff_fno_lofi_mf_oed_multiple_source_multi_step_without_tf_0pt1_GSuvxy_scale_identity_ALL_DATA.pt",
+  "mlp_output_transform": "scalers/mlp_output_transform.npz",
+  "mlp_bounds": "scalers/mlp_output_scaling_bounds.npy",
+  "grid_spacing": 0.1,
+  "medium_time_step": 0.05,
+  "low_time_step": 0.1,
+  "final_time": 0.6,
+  "model_costs_seconds": [31.48, 2.039, 0.65]
+}

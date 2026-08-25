@@ -1,0 +1,33 @@
+random_seed: 7
+
+pilot:
+  initial_designs: [-3.0, 3.0]
+  candidate_count: 121
+  n_active_designs: 3
+  n_samples_per_design: 12
+  n_initial_samples: 12
+  acquisition_switch_fraction: 0.5
+  wishart_draws: 100
+  objective_weight_mode: auto
+  common_random_numbers_across_initial_designs: true
+  gp_settings:
+    normalize_designs: true
+    normalize_outputs: true
+    initial_length_scale: 0.25
+    n_restarts_optimizer: 0
+    optimize_hyperparameters: true
+    random_seed: 7
+
+optimization:
+  candidate_count: 241
+  n_iterations: 8
+  per_iteration_budget: 24.0
+  variance_inflation_standard_deviations: 2.0
+  local_pilot_samples: 8
+  estimator:
+    backend: independent
+    minimum_base: 2
+    minimum_extra: 2
+  objective_gp:
+    n_restarts_optimizer: 0
+    allow_repeated_candidates: true

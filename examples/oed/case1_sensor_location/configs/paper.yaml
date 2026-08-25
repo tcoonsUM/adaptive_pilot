@@ -1,0 +1,28 @@
+# Manuscript Case 1 settings. This run is intentionally expensive.
+random_seed: 43
+
+assets:
+  root: assets/oed
+  device: cpu
+
+utility:
+  measurement_time: 0.325
+  inner_sample_sizes: [1000, 1000, 1000]
+  inner_seed: 41
+  noise_standard_deviation: 0.1
+  fno_batch_size: 32
+  outer_chunk_size: 256
+
+pilot:
+  n_outer_samples: 300
+  seed: 43
+
+estimation:
+  n_trials: 60
+  nmc_outer_samples: 25
+  # The ACV budget defaults to 25 high-fidelity utility samples.
+  minimum_base: 2
+  minimum_extra: 2
+
+oracle:
+  path: paper_results/oed_case1/case1_precomputed.npz
