@@ -44,8 +44,6 @@ assets/oed/           trained MLP/FNO checkpoints and numeric transform paramete
 tests/               fast tests for the reusable numerical components
 ```
 
-`REPRODUCIBILITY.md` distinguishes plot-only, lightweight executable, and full-paper workflows. Author-controlled licensing and release steps are listed in `PUBLICATION_CHECKLIST.md`.
-
 ## Installation
 
 Core covariance emulation and the four-branch example:
@@ -72,7 +70,7 @@ python -m pip install -e .[paper,dev]
 
 A Conda environment is also provided in `environment-paper.yml`.
 
-## Fast start
+## Quick start
 
 Run a small end-to-end four-branch pilot study and optimization:
 
@@ -122,14 +120,14 @@ python examples/oed/case2_measurement_time/run_optimization.py \
 
 ## Using the pilot loop on another problem
 
-A model is any callable with the signature
+User-defined models can be used - these functions can be any callable with the signature
 
 ```python
 model(design: numpy.ndarray, random_inputs: numpy.ndarray) -> numpy.ndarray
 ```
 
 where one scalar output is returned for each row of `random_inputs`. All fidelities must be
-evaluated on the same random inputs within a pilot batch. A minimal setup is:
+evaluated on the same random inputs within a pilot batch. An example minimal setup is:
 
 ```python
 import numpy as np
@@ -175,7 +173,7 @@ new applications. It uses a common base sample across all fidelities and indepen
 additional samples for each low-fidelity model, then numerically optimizes the allocation
 under the supplied cost budget.
 
-The research scripts searched the allocation families exposed by MXMCPy. Install the
+Our research scripts can also search the allocation families exposed by MXMCPy. Install the
 `mxmcpy` or `paper` extra and choose the `mxmcpy` backend in the four-branch YAML
 configuration to use that adapter. The OED executable examples use the self-contained backend; the supplied
 paper-result arrays remain the stable reference for the reported aggregate values. The
